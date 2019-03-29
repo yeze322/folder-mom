@@ -1,0 +1,30 @@
+{
+  "name": "folder-mom",
+  "version": "0.1.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "bin": {
+    "mom": "./src/index.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/yeze322/folder-mom.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/yeze322/folder-mom/issues"
+  },
+  "homepage": "https://github.com/yeze322/folder-mom#readme",
+  "engines": {
+    "node": ">=10.0"
+  },
+  "dependencies": {
+    "commander": "^2.19.0",
+    "configstore": "^4.0.0"
+  }
+}
