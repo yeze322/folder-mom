@@ -27,8 +27,8 @@ if (program.delete) {
     config.delete(program.delete);
 }
 
-if (program.code) {
-    const path = config.get(program.code)
+if (program.open) {
+    const path = config.get(program.open)
     if (!path) {
         console.log('not found.')
         return;
