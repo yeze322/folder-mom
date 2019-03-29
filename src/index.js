@@ -11,7 +11,7 @@ program
 	.option('-a, --add, add [alias]', 'Add current path as alias. This will replace existed data.', null)
 	.option('-d, --delete, delete [alias]', 'Delete alias from store.', null)
     .option('-o, --open, open [alias]', 'open the alias with code.', null)
-    .option('-l, --list', 'list all available commands')
+    .option('-l, --list, list', 'list all available commands')
 	.parse(process.argv);
 
 const config = new ConfigStore('mom');
@@ -47,7 +47,7 @@ if (program.list) {
     const keys = Object.keys(config.all);
     console.log(`You have ${keys.length} items:`);
     keys.forEach(key => {
-        console.log(`- ${key}=${config[key]}`);
+        console.log(`- ${key}=${config.get(key)}`);
     });
 }
 
