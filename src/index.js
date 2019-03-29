@@ -28,15 +28,15 @@ if (program.delete) {
 }
 
 if (program.open) {
-    const path = config.get(program.open)
-    if (!path) {
+    const alias = config.get(program.open)
+    if (!alias) {
         console.log('not found.')
         return;
     }
 
-    console.log(`Open project: '${program.code}'\nat '${config[program.code]}' with Code.exe.`);
+    console.log(`Open project: '${alias}'\nat '${config.get(alias)}' with Code.exe.`);
     // open it
-    exec(`code ${path}`, (err, stdout, stderr) => {
+    exec(`code ${alias}`, (err, stdout, stderr) => {
         err && console.err(err);
         stdout && console.log(stdout);
         stderr && console.error(stderr);
