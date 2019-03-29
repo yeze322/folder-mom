@@ -10,7 +10,7 @@ program
 	.version('0.1.0')
 	.option('-a, --add, add [alias]', 'Add current path as alias. This will replace existed data.', null)
 	.option('-d, --delete, delete [alias]', 'Delete alias from store.', null)
-    .option('-o, --code, code [alias]', 'open the alias with code.', null)
+    .option('-o, --open, open [alias]', 'open the alias with code.', null)
     .option('-l, --list', 'list all available commands')
 	.parse(process.argv);
 
