@@ -8,10 +8,11 @@ const { exec } = require('child_process');
 
 program
 	.version('0.1.0')
-	.option('-a, --add, add [alias]', 'Add current path as alias. This will replace existed data.', null)
-	.option('-d, --delete, delete [alias]', 'Delete alias from store.', null)
-    .option('-o, --open, open [alias]', 'open the alias with code.', null)
-    .option('-l, --list, list', 'list all available commands')
+	.option('-a, --add [alias]', 'Add current path as alias. This will replace existed data.', null)
+	.option('-d, --delete [alias]', 'Delete alias from store.', null)
+    .option('-o, --open [alias]', 'open the alias with code.', null)
+    .option('-e, --echo [alias]', 'echo the path', null)
+    .option('-l, --list', 'list all available commands')
 	.parse(process.argv);
 
 const config = new ConfigStore('mom');
@@ -43,6 +44,10 @@ if (program.open) {
     })
 }
 
+if (program.echo) {
+    console.log(config.get(program.echo));
+}
+
 if (program.list) {
     const keys = Object.keys(config.all);
     console.log(`You have ${keys.length} items:`);
@@ -50,5 +55,3 @@ if (program.list) {
         console.log(`- ${key}=${config.get(key)}`);
     });
 }
-
-console.log('[done]');
