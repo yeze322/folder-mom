@@ -11,7 +11,7 @@ program
 	.option('-a, --add [alias]', 'Add current path as alias. This will replace existed data.', null)
 	.option('-d, --delete [alias]', 'Delete alias from store.', null)
     .option('-o, --open [alias]', 'open the alias with code.', null)
-    .option('-e, --echo [alias]', 'echo the path', null)
+    .option('-e, --explorer [alias]', 'open the path with explorer', null)
     .option('-l, --list', 'list all available commands')
 	.parse(process.argv);
 
@@ -44,8 +44,10 @@ if (program.open) {
     })
 }
 
-if (program.echo) {
-    console.log(config.get(program.echo));
+if (program.explorer) {
+    const path = config.get(program.explorer);
+    console.log(`Explore ${path}`);
+    exec(`explorer ${path}`);
 }
 
 if (program.list) {
