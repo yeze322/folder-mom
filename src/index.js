@@ -32,7 +32,7 @@ if (program.open) {
     const path = config.get(program.open)
     if (!path) {
         console.log('not found.')
-        return;
+        throw new Error('Cannot open path')
     }
 
     console.log(`Open project: '${program.open}'\nat '${path}' with Code.exe.`);
